@@ -15,6 +15,11 @@ import { ProductsComponent } from './components/products/products.component';
 import { ListComponent } from './components/products/list/list.component';
 import { CreateComponent } from './components/products/create/create.component';
 import { UpdateComponent } from './components/products/update/update.component';
+import { PropertyComponent } from './components/data/property/property.component';
+import { StyleComponent } from './components/data/style/style.component';
+import { EventComponent } from './components/data/event/event.component';
+import { TwowayComponent } from './components/data/twoway/twoway.component';
+import  {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -31,11 +36,17 @@ import { UpdateComponent } from './components/products/update/update.component';
     ListComponent,
     CreateComponent,
     UpdateComponent,
+    PropertyComponent,
+    StyleComponent,
+    EventComponent,
+    TwowayComponent,
     
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

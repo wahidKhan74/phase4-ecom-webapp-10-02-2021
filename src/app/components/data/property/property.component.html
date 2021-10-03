@@ -1,0 +1,61 @@
+<div class="container">
+    <div class="row">
+        <!-- {{}} - interpolation based property binding -->
+        <div class="col">
+            <h4>Interpolation based property binding</h4>
+            <div class="alert alert-primary" role="alert">
+                Username : {{username}}
+            </div>
+            <div class="alert alert-secondary" role="alert">
+                Age : {{age}}
+            </div>
+            <div class="alert alert-success" role="alert">
+                Message : {{message}}
+            </div>
+            <div class="alert alert-danger" role="alert">
+                Is Married : {{isMarried}}
+            </div>
+            <div class="alert alert-warning" role="alert">
+                Product details : {{product.id}} -- {{product.name}} -- {{product.price}} -- {{product.status}} --
+                {{product.desc}}
+            </div>
+
+            <div class="alert alert-info" role="alert">
+                <ul *ngFor="let od of orders">
+                    <li>{{od}}</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- [] based property binding -->
+        <div class="col">
+            <h4> [ ] based property binding</h4>
+            <div class="alert alert-primary" role="alert">
+                Username : <span [innerText]="username"></span>
+            </div>
+            <div class="alert alert-secondary" role="alert">
+                Age : <span [innerText]="age"></span>
+            </div>
+            <div class="alert alert-success" role="alert">
+                Message : <span [innerText]="message"></span>
+            </div>
+            <div class="alert alert-danger" role="alert">
+                Is Married : <span [innerText]="isMarried"></span>
+            </div>
+
+            <div class="alert alert-warning" role="alert">
+                Product details : <span [innerText]="product.id"></span> -- 
+                <span [innerText]="product.name"></span>  --
+                <span [innerText]="product.price"></span> --
+                <span [innerText]="product.status"></span> --
+                <span [innerText]="product.desc"></span>
+            </div>
+
+            <div class="alert alert-info" role="alert">
+                <ul *ngFor="let od of orders">
+                    <li> <span [innerText]="od"></span></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

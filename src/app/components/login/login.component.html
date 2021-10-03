@@ -1,1 +1,44 @@
-<p>login works!</p>
+<div class="container mt-5">
+    <div class="row">
+        <div class="col"></div>
+        <div class="col-6">
+            <h4>Login Form </h4>
+            <form class="login-form" #loginForm="ngForm">
+                <div class="form-group">
+                  <label for="email">Email address</label>
+                  <input type="email" class="form-control" id="email" name="email" #email="ngModel" [(ngModel)]="login.email" 
+                  required  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"  aria-describedby="emailHelp">
+                  <small *ngIf="hasError(email)" [class]="hasError(email) ? 'error' : ''">
+                    <div *ngIf="email.errors">
+                            <span *ngIf="email.errors.required">Email address is a required field !</span>
+                            <span *ngIf="email.errors.pattern">Entered email address is not a valid email !</span>
+                    </div>
+                  </small>
+                </div>
+                <div class="form-group">
+                  <label for="password">Password</label>
+                  <input type="password" class="form-control" name="password" #password="ngModel" [(ngModel)]="login.password" id="password"
+                  required minlength="6" maxlength="12">
+                  <small *ngIf="hasError(password)" [class]="hasError(password) ? 'error' : ''">
+                    <div *ngIf="password.errors">
+                            <span *ngIf="password.errors.required">Password is a required field !</span>
+                            <span *ngIf="password.errors.minlength">Entered password is not valid password min 6 char!</span>
+                            <span *ngIf="password.errors.maxlength">Entered password is not valid password min 12 char!</span>
+                    </div>
+                  </small>
+                </div>
+                <div class="form-group form-check">
+                  <input type="checkbox" class="form-check-input" name="agree" #agree="ngModel" [(ngModel)]="login.agree" id="agree" required>
+                  <label class="form-check-label" for="agree">Remember me !</label>
+                  <small *ngIf="hasError(agree)" [class]="hasError(agree) ? 'error' : ''">
+                    <div *ngIf="agree.errors">
+                            <span *ngIf="agree.errors.required">agree is a required field !</span>
+                    </div>
+                  </small>
+                </div>
+                <button type="submit" class="btn btn-primary" (click)="onSubmit(loginForm)">Submit</button>
+              </form>
+        </div>
+        <div class="col"></div>
+    </div>
+</div>

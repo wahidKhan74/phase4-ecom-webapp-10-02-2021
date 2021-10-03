@@ -1,1 +1,125 @@
-<p>register works!</p>
+<div class="container mt-5">
+    <div class="row">
+        <div class="col"></div>
+        <div class="col-6">
+            <h4>SignUp Form : </h4>
+            <form class="register-form" [formGroup]="registerForm" (ngSubmit)="onSubmit(registerForm)">
+                <div class="form-row">
+                    <!-- First Name -->
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label for="firstName">First Name</label>
+                            <input type="text" class="form-control" name="firstName" id="firstName" formControlName="firstName"
+                                aria-describedby="firstNameHelp">
+                            <small *ngIf="hasError('firstName')" [class]="hasError('firstName') ? 'error' :''">
+                                <div *ngIf="f.firstName.errors">
+                                    <span *ngIf="f.firstName.errors.required">First Name is a required field</span>
+                                    <span *ngIf="f.firstName.errors.minlength">First Name is a min 3 char long
+                                        field</span>
+                                    <span *ngIf="f.firstName.errors.maxlength">First Name is a max 15 char long
+                                        field</span>
+                                </div>
+                            </small>
+                        </div>
+                    </div>
+                    <!-- Last Name -->
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label for="lastName">Last Name</label>
+                            <input type="text" class="form-control" name="lastName" id="lastName" formControlName="lastName"
+                                aria-describedby="lastNameHelp">
+                            <small *ngIf="hasError('lastName')" [class]="hasError('lastName') ? 'error' :''">
+                                <div *ngIf="f.lastName.errors">
+                                    <span *ngIf="f.lastName.errors.required">Last Name is a required field</span>
+                                    <span *ngIf="f.lastName.errors.minlength">Last Name is a min 3 char long
+                                        field</span>
+                                    <span *ngIf="f.lastName.errors.maxlength">Last Name is a max 15 char long
+                                        field</span>
+                                </div>
+                            </small>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <!-- Email -->
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label for="email">Email address</label>
+                            <input type="email" class="form-control" name="email" id="email"   formControlName="email"
+                                aria-describedby="emailHelp" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$">
+                            <small *ngIf="hasError('email')" [class]="hasError('email') ? 'error' :''">
+                                <div *ngIf="f.email.errors">
+                                    <span *ngIf="f.email.errors.required">Email is a required field</span>
+                                    <span *ngIf="f.email.errors.pattern">Email is a not a valid email</span>
+                                    <span *ngIf="f.email.errors.email">Email is a not a valid email</span>
+                                </div>
+                            </small>
+                        </div>
+                    </div>
+                    <!-- Password -->
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <input type="password" class="form-control" name="password" id="password" formControlName="password"
+                                aria-describedby="passwordHelp" minlength="6" maxlength="15">
+                            <small *ngIf="hasError('password')" [class]="hasError('password') ? 'error' :''">
+                                <div *ngIf="f.password.errors">
+                                    <span *ngIf="f.password.errors.required">Password is a required field</span>
+                                    <span *ngIf="f.password.errors.minlength">Password is a min 6 char long field</span>
+                                    <span *ngIf="f.password.errors.maxlength">Password is a max 16 char long
+                                        field</span>
+                                </div>
+                            </small>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group col-sm-6">
+                        <label for="inputState">State</label>
+                        <select id="inputState" name="state" class="form-control"  formControlName="state">
+                            <option value="NY">New York</option>
+                            <option value="TX">Texas</option>
+                            <option value="CA">California</option>
+                            <option value="HW">Hawaii</option>
+                        </select>
+                        <small *ngIf="hasError('state')" [class]="hasError('state') ? 'error' :''">
+                            <div *ngIf="f.state.errors">
+                                <span *ngIf="f.state.errors.required">State is a required field</span>
+                            </div>
+                        </small>
+                    </div>
+                    <div class="form-group col-sm-6">
+                        <label for="inputZip">Zip</label>
+                        <input type="number" class="form-control" id="zipcode" name="zipcode" formControlName="zipcode">
+                        <small *ngIf="hasError('zipcode')" [class]="hasError('zipcode') ? 'error' :''">
+                            <div *ngIf="f.zipcode.errors">
+                                <span *ngIf="f.zipcode.errors.required">zipcode is a required field</span>
+                            </div>
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group col-sm-6">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="agree" formControlName="agree" id="agree">
+                            <label class="form-check-label" for="aggree">
+                                Please check the terms and conditions!
+                            </label>
+                            <small *ngIf="hasError('agree')" [class]="hasError('agree') ? 'error' :''">
+                                <div *ngIf="f.agree.errors">
+                                    <span *ngIf="f.agree.errors.required">agree is a required field</span>
+                                </div>
+                            </small>
+                        </div>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-success btn-block">Submit</button>
+            </form>
+        </div>
+        <div class="col"></div>
+    </div>
+</div>

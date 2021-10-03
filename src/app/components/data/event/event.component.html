@@ -1,0 +1,30 @@
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h4>Event Binding</h4>
+            <div [class]="status ? 'alert alert-primary' : 'alert alert-warning'" role="alert">
+                Username : {{username}}
+            </div>
+            <div [class]="status ? 'alert alert-success' : 'alert alert-warning'" role="alert">
+                Message : {{message}}
+            </div>
+            <button class="btn btn-primary" (click)="onSubmit()">
+                Submit
+            </button>
+        </div>
+        <div class="col">
+            
+            <div class="form-group">
+                <div [class]="status ? 'alert alert-primary' : 'alert alert-warning'" role="alert">
+                    Email : {{email}}
+                </div>
+                <label for="email">Email address</label>
+                <input type="email" class="form-control" id="email" aria-describedby="emailHelp" (input)="onInput($event)">
+                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+              </div>
+              <button class="btn btn-primary" (mouseover)="onMouseOver()">
+                Submit
+            </button>
+        </div>
+    </div>
+</div>

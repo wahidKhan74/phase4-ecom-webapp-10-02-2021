@@ -1,0 +1,27 @@
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h4>Event + Property Binding</h4>
+            <div class="form-group">
+                <div [class]="status ? 'alert alert-primary' : 'alert alert-warning'" role="alert">
+                    Email : {{email}}
+                </div>
+                <label for="email">Email address</label>
+                <input type="email" class="form-control" id="email" aria-describedby="emailHelp" (input)="onInput($event)">
+                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+            </div>
+        </div>
+
+        <div class="col">
+            <h4>Two way data Binding</h4>
+            <div class="form-group">
+                <div [class]="status ? 'alert alert-primary' : 'alert alert-warning'" role="alert">
+                    Username : {{username}}
+                </div>
+                <label for="username">Username </label>
+                <input type="username" class="form-control" id="username" name="username" [(ngModel)]="username" aria-describedby="usernameHelp" >
+                <small id="usernameHelp" class="form-text text-muted">We'll never share your username with anyone else.</small>
+              </div>
+        </div>
+    </div>
+</div>
