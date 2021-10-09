@@ -1,1 +1,62 @@
-<p>create works!</p>
+<div class="container mt-5">
+    <div class="row">
+        <div class="col"></div>
+        <div class="col-6">
+            <h4>Product Form : </h4>
+            <form class="product-form" [formGroup]="productForm" (ngSubmit)="onSubmit(productForm)">
+                <div class="form-row">
+                    <!-- First Name -->
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label for="name">Product Name</label>
+                            <input type="text" class="form-control" name="name" id="name" formControlName="name"
+                                aria-describedby="nameHelp">
+                            <small *ngIf="hasError('name')" [class]="hasError('name') ? 'error' :''">
+                                <div *ngIf="f.name.errors">
+                                    <span *ngIf="f.name.errors.required">Product Name is a required field</span>
+                                    <span *ngIf="f.name.errors.minlength">Product Name is a min 3 char long
+                                        field</span>
+                                    <span *ngIf="f.name.errors.maxlength">Product Name is a max 30 char long
+                                        field</span>
+                                </div>
+                            </small>
+                        </div>
+                    </div>
+                    <!-- Last Name -->
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label for="price">Product Price</label>
+                            <input type="text" class="form-control" name="price" id="price" formControlName="price"
+                                aria-describedby="priceHelp">
+                            <small *ngIf="hasError('price')" [class]="hasError('price') ? 'error' :''">
+                                <div *ngIf="f.price.errors">
+                                    <span *ngIf="f.price.errors.required">Price is a required field</span>
+                                </div>
+                            </small>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <!-- description -->
+                    <div class="col-sm-12">
+                        <div class="form-group">
+                            <label for="description">Product Description</label>
+                            <textarea type="description" class="form-control" name="description" id="description"   formControlName="description"
+                                aria-describedby="descriptionHelp" > </textarea>
+                            <small *ngIf="hasError('description')" [class]="hasError('description') ? 'error' :''">
+                                <div *ngIf="f.description.errors">
+                                    <span *ngIf="f.description.errors.required">Description is a required field</span>
+                                </div>
+                            </small>
+                        </div>
+                    </div>
+                   
+                </div>
+
+                <button type="submit" class="btn btn-success btn-block">Submit</button>
+            </form>
+        </div>
+        <div class="col"></div>
+    </div>
+</div>
