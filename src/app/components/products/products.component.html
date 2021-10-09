@@ -1,1 +1,30 @@
-<p>products works!</p>
+<button class="btn btn-primary">Create</button>
+<table class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Product Name</th>
+            <th scope="col">Price</th>
+            <th scope="col">Description</th>
+            <!-- <th scope="col">status</th> -->
+            <!-- <th scope="col">Brand</th> -->
+            <th scope="col">Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let p of products">
+            <!-- <span *ngIf="p.active"> -->
+                <th scope="row">{{p.id}}</th>
+                <td>{{p.name}}</td>
+                <td>{{p.price}}</td>
+                <td>{{p.description}}</td>
+                <!-- <td><a href="#" [class]="p.active ? 'badge badge-success' : 'badge badge-danger'">{{p.active}}</a> </td> -->
+                <!-- <td><a href="#" class="badge badge-info">{{p.brand}}</a> </td> -->
+                <td>
+                    <a href="#" class="badge badge-info">update</a> &nbsp; &nbsp;
+                    <a href="#" class="badge badge-danger">delete</a>
+                </td>
+            <!-- </span> -->
+        </tr>
+    </tbody>
+</table>

@@ -20,6 +20,9 @@ import { StyleComponent } from './components/data/style/style.component';
 import { EventComponent } from './components/data/event/event.component';
 import { TwowayComponent } from './components/data/twoway/twoway.component';
 import  {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { DataService } from './services/data.service';
+import { ProductService } from './services/product.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -46,9 +49,10 @@ import  {FormsModule, ReactiveFormsModule} from '@angular/forms';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [DataService,ProductService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
