@@ -7,7 +7,7 @@
                 <div class="form-group">
                   <label for="email">Email address</label>
                   <input type="email" class="form-control" id="email" name="email" #email="ngModel" [(ngModel)]="login.email" 
-                  required  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"  aria-describedby="emailHelp">
+                  required   aria-describedby="emailHelp"  appInputformator>
                   <small *ngIf="hasError(email)" [class]="hasError(email) ? 'error' : ''">
                     <div *ngIf="email.errors">
                             <span *ngIf="email.errors.required">Email address is a required field !</span>

@@ -1,1 +1,67 @@
-<p>about works!</p>
+<!-- ngFor-->
+<table class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Product Name</th>
+            <th scope="col">Price</th>
+            <th scope="col">Description</th>
+            <th scope="col">status</th>
+            <th scope="col">Brand</th>
+        </tr>
+    </thead>
+    <tbody *ngIf="products.length>0; then listproducts else noproducts">
+
+    </tbody>
+    <ng-template #listproducts>
+        <tr *ngFor="let p of products">
+            <th scope="row">{{p.id}}</th>
+            <td>{{p.name}}</td>
+            <td>{{p.price}}</td>
+            <td>{{p.desc}}</td>
+            <td><a href="#" [class]="p.active ? 'badge badge-success' : 'badge badge-danger'">{{p.active}}</a> </td>
+            <td><a href="#" class="badge badge-info">{{p.brand}}</a> </td>
+        </tr>
+    </ng-template>
+
+    <ng-template #noproducts>
+        <tbody>
+            <div class="d-flex justify-content-center">
+                <div class="spinner-border" role="status">
+                    <span class="sr-only">Loading...</span>
+                </div>
+            </div>
+        </tbody>
+    </ng-template>
+
+</table>
+
+<ul class="nav nav-tabs">
+    <li class="nav-item">
+        <a class="nav-link active" (click)="viewMode='default'">Default View</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" (click)="viewMode='map'" >Map View</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" (click)="viewMode='list'">List View</a>
+    </li>
+</ul>
+
+<div [ngSwitch]="viewMode">
+    <div *ngSwitchCase="'map'">
+        <div class="alert alert-primary" role="alert">
+            Map view Content Here !
+        </div>
+    </div>
+    <div *ngSwitchCase="'list'">
+        <div class="alert alert-success" role="alert">
+            List view Content Here !
+        </div>
+    </div>
+    <div *ngSwitchDefault>
+        <div class="alert alert-warning" role="alert">
+            Default view Content Here !
+        </div>
+    </div>
+</div>

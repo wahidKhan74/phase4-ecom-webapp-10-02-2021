@@ -1,0 +1,18 @@
+.bgOne {
+    background-color: cadetblue;
+    border: 2px solid blue;
+    padding :15px;
+}
+
+.bgThree{
+    background-color: burlywood;
+    border: 2px solid crimson;
+    padding :15px;
+}
+
+
+.bgTwo {
+    background-color: cyan;
+    border: 2px solid darkblue;
+    padding :15px;
+}

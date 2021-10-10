@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from 'src/app/services/data.service';
 
 @Component({
   selector: 'app-about',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AboutComponent implements OnInit {
 
-  constructor() { }
+  public products:any;
+  public viewMode:string='';
+
+  constructor(private dataSrv:DataService) { }
 
   ngOnInit(): void {
+    this.products = this.dataSrv.products;
   }
 
 }

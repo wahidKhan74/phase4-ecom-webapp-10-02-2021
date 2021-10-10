@@ -1,1 +1,40 @@
-<p>notfound works!</p>
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h4>ngStyle Directive</h4>
+            <p [ngStyle]="{'color':'brown', 'font-size':'20px'}">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad, quae commodi. Accusantium, eius! Tempore
+                voluptatum ipsam deleniti, deserunt sapiente possimus earum consequuntur nesciunt vitae, eveniet,
+                commodi maiores cupiditate provident asperiores.
+            </p>
+            <p [ngStyle]="{'color':custom.color, 'font-size':custom.fontsize, 
+            'border':custom.border, 'background-color':custom.background, padding:custom.padding}">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad, quae commodi. Accusantium, eius! Tempore
+                voluptatum ipsam deleniti, deserunt sapiente possimus earum consequuntur nesciunt vitae, eveniet,
+                commodi maiores cupiditate provident asperiores.
+            </p>
+
+            <button class="btn" [ngStyle]="status ?  {'color':'green'} : {'color':'red'}" (click)="updateStatus()">
+                Submit
+            </button>
+        </div>
+        <div class="col">
+            <h4>ngClass Directive</h4>
+            <p [ngClass]="'bgOne'">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quod beatae quas error quo
+                iusto at libero iste
+                ea corporis ad non, ullam autem molestiae delectus, nam alias itaque. Suscipit, repudiandae.</p>
+            <p [ngClass]="['bgOne','bgTwo']">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quod beatae quas
+                error quo
+                iusto at libero iste
+                ea corporis ad non, ullam autem molestiae delectus, nam alias itaque. Suscipit, repudiandae.</p>
+            <p [ngClass]=" status ? 'bgTwo' : 'bgThree'">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quod beatae quas
+                error quo
+                iusto at libero iste
+                ea corporis ad non, ullam autem molestiae delectus, nam alias itaque. Suscipit, repudiandae.</p>
+
+                <button class="btn" [ngClass]="status ? 'btn-success' : 'btn-danger'" (click)="updateStatus()">
+                    Submit
+                </button>
+        </div>
+    </div>
+</div>

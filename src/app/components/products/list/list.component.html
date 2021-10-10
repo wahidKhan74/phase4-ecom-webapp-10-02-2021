@@ -1,1 +1,16 @@
-<p>list works!</p>
+<div class="card" style="width: 70rem;">
+    <div class="card-body">
+        <a href="#" class="badge badge-primary">Product Id :{{product.id}}</a>
+        <h5 class="card-title">{{product.name | uppercase}}</h5>
+        <p class="card-text">Desc: {{product.desc | lowercase}}.</p>
+        <p class="card-text">Price: {{product.price | currency : 'EUR'}}.</p>
+        <!-- <p class="card-text">Rating: {{product.rating | number : '1.1-2'}}.</p> -->
+        <p class="card-text">Rating * 500 : {{product.rating | multiplier:'500'}}.</p>
+        <p class="card-text">Launch Date: {{product.launchDate | date : 'shortDate'}}.</p>
+        <p class="card-text">Launch Date: {{product.launchDate | date : 'longDate'}}.</p>
+        <p class="card-text">Launch Date: {{product.launchDate | date : 'MM/dd/yyyy : HH:mm:ss'}}.</p>
+        <p class="card-text">Product: {{product | json}}.</p>
+        <p class="card-text">{{(show) ? product.para : product.para | summary: 10}} <a class="link" (click)="showMore()">{{show ? 'Show Less' : 'Show More'}}</a></p>
+        <a href="#" class="btn btn-primary">Go somewhere</a>
+    </div>
+</div>
